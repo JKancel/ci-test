@@ -1,0 +1,36 @@
+name: pr_coverage_report
+on:
+    repository_dispatch:
+        types: push_coverage_report
+jobs:
+    coverage:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/github-script@v2
+              id: get-pr-number
+              with:
+                  script: |
+                      const {data: pulls} = await github.pulls.list({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      state: 'open',
+                      head: '${{ github.event.client_payload.ref }}'
+                      })
+                      return pulls[0].number
+                  result-encoding: string
+            # - uses: actions/checkout@v3
+            #   with:
+            #     ref: ${{ github.event.client_payload.ref }}
+            # - name: put payload into json file
+            #   run: |
+            #       curl ${{ github.event.client_payload.coverage_report_url }} -H "Circle-Token: ${{ secrets.CCI_TOKEN }}" > coverage-final.json
+            #       echo "coverage-final.json content :"
+            #       cat coverage-final.json
+            - uses: ArtiomTr/jest-coverage-report-action@v2.1.2
+              id: coverage
+              with:
+                  coverage-file: ./coverage/coverage-final.json
+            - uses: marocchino/sticky-pull-request-comment@v2.3.0
+              with:
+                  number: ${{ steps.get-pr-number.outputs.result }}
+                  message: ${{ steps.coverage.outputs.report }}
