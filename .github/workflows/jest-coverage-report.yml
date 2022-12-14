@@ -18,9 +18,9 @@ jobs:
                       })
                       return pulls[0].number
                   result-encoding: string
-            # - uses: actions/checkout@v3
-            #   with:
-            #     ref: ${{ github.event.client_payload.ref }}
+            - uses: actions/checkout@v3
+              with:
+                ref: ${{ github.event.client_payload.ref }}
             # - name: put payload into json file
             #   run: |
             #       curl ${{ github.event.client_payload.coverage_report_url }} -H "Circle-Token: ${{ secrets.CCI_TOKEN }}" > coverage-final.json
