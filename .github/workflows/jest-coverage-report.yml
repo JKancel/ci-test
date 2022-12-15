@@ -32,6 +32,7 @@ jobs:
               id: coverage
               with:
                   coverage-file: ./coverage/coverage-final.json
+                  base-coverage-file: ./coverage/coverage-final.json
             - uses: marocchino/sticky-pull-request-comment@v2.3.0
               with:
                   number: ${{ steps.get-pr-number.outputs.result }}
