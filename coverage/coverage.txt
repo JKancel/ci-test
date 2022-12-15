@@ -1,0 +1,104 @@
+
+> @ merge:coverage /Users/jkancel/root/job/meilleur_agent/aviv_price-pages
+> node ./scripts/mergeCoverage.mjs
+
+Coverage directories found :  [
+  '/Users/jkancel/root/job/meilleur_agent/aviv_price-pages/brands/factory/coverage/',
+  '/Users/jkancel/root/job/meilleur_agent/aviv_price-pages/coverage/',
+  '/Users/jkancel/root/job/meilleur_agent/aviv_price-pages/tools/sitemap-generator/coverage/',
+  '/Users/jkancel/root/job/meilleur_agent/aviv_price-pages/white-label/coverage/'
+]
+---------------------------------------|---------|----------|---------|---------|-------------------
+File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------------------|---------|----------|---------|---------|-------------------
+All files                              |   81.95 |    65.17 |   81.09 |    80.5 |                   
+ brands/factory/src                    |     100 |      100 |     100 |     100 |                   
+  index.tsx                            |     100 |      100 |     100 |     100 |                   
+ tools/sitemap-generator/src           |   61.94 |    66.66 |   69.23 |   56.03 |                   
+  sitemap-generator-lib.ts             |    74.1 |    82.35 |      72 |   69.14 | ...55,204-259,338 
+  sitemap-generator.ts                 |       0 |        0 |       0 |       0 | 16-66             
+ white-label/src/adapters              |     100 |      100 |     100 |     100 |                   
+  Mapper.ts                            |     100 |      100 |     100 |     100 |                   
+ white-label/src/adapters/geo-api      |   89.13 |    70.17 |     100 |   89.53 |                   
+  GeoApi.ts                            |   90.66 |    61.76 |     100 |   91.54 | ...03-106,141,185 
+  GeoApiParentsMapper.ts               |   76.92 |       40 |     100 |      75 | 20,24-25          
+  GeoApiPlaceMapper.ts                 |     100 |    94.44 |     100 |     100 | 27                
+ white-label/src/adapters/http         |   66.66 |    66.66 |   52.38 |   66.66 |                   
+  HttpClient.ts                        |   92.68 |      100 |      80 |   97.29 | 92                
+  HttpError.ts                         |     100 |      100 |     100 |     100 |                   
+  OAuthHttpClient.ts                   |   13.04 |        0 |   11.11 |    9.09 | 24-148            
+ white-label/src/adapters/market-api   |   44.82 |    14.28 |   46.15 |   48.07 |                   
+  MarketApi.ts                         |   44.82 |    14.28 |   46.15 |   48.07 | 53-130            
+ ...-label/src/adapters/vectortile-api |     100 |       60 |     100 |     100 |                   
+  VectorTileApi.ts                     |     100 |       25 |     100 |     100 | 22-26             
+  VectorTileApiTileJSONMapper.ts       |     100 |    83.33 |     100 |     100 | 26                
+ white-label/src/components/BaseLayout |     100 |      100 |     100 |     100 |                   
+  BaseLayout.tsx                       |     100 |      100 |     100 |     100 |                   
+  index.ts                             |     100 |      100 |     100 |     100 |                   
+ ...e-label/src/components/ErrorLayout |     100 |      100 |     100 |     100 |                   
+  ErrorLayout.tsx                      |     100 |      100 |     100 |     100 |                   
+  index.ts                             |     100 |      100 |     100 |     100 |                   
+ white-label/src/components/Footer     |    90.9 |      100 |   83.33 |      90 |                   
+  Footer.tsx                           |    90.9 |      100 |   83.33 |      90 | 56                
+ white-label/src/components/Map        |   97.29 |      100 |      90 |   96.77 |                   
+  Map.tsx                              |     100 |      100 |     100 |     100 |                   
+  MapService.ts                        |    92.3 |      100 |      80 |   91.66 | 19                
+  index.tsx                            |     100 |      100 |     100 |     100 |                   
+ white-label/src/components/PriceBlock |     100 |      100 |     100 |     100 |                   
+  PriceBlock.tsx                       |     100 |      100 |     100 |     100 |                   
+ white-label/src/components/Searchbox  |   73.33 |       50 |      60 |   69.23 |                   
+  Searchbox.tsx                        |   69.23 |       50 |      50 |   66.66 | 14-16,20          
+  index.tsx                            |     100 |      100 |     100 |     100 |                   
+ white-label/src/components/Sidebar    |     100 |      100 |     100 |     100 |                   
+  Sidebar.tsx                          |     100 |      100 |     100 |     100 |                   
+ white-label/src/components/header     |     100 |      100 |     100 |     100 |                   
+  Header.tsx                           |     100 |      100 |     100 |     100 |                   
+  index.tsx                            |     100 |      100 |     100 |     100 |                   
+ white-label/src/constants             |     100 |      100 |     100 |     100 |                   
+  index.js                             |     100 |      100 |     100 |     100 |                   
+ white-label/src/entities/enums        |     100 |      100 |     100 |     100 |                   
+  AccommodationType.ts                 |     100 |      100 |     100 |     100 |                   
+  Order.ts                             |     100 |      100 |     100 |     100 |                   
+  PlaceSort.ts                         |     100 |      100 |     100 |     100 |                   
+  PlaceType.ts                         |     100 |      100 |     100 |     100 |                   
+  TransactionType.ts                   |     100 |      100 |     100 |     100 |                   
+ white-label/src/entities/errors       |     100 |      100 |     100 |     100 |                   
+  ApiError.ts                          |     100 |      100 |     100 |     100 |                   
+  InactivePlaceError.ts                |     100 |      100 |     100 |     100 |                   
+  PlaceNotFoundError.ts                |     100 |      100 |     100 |     100 |                   
+ white-label/src/entities/repositories |     100 |      100 |     100 |     100 |                   
+  PlaceRepository.ts                   |     100 |      100 |     100 |     100 |                   
+  PriceRepository.ts                   |     100 |      100 |     100 |     100 |                   
+  TileRepository.ts                    |     100 |      100 |     100 |     100 |                   
+ white-label/src/helpers               |     100 |      100 |     100 |     100 |                   
+  removeNullOrUndefinedAsync.ts        |     100 |      100 |     100 |     100 |                   
+ white-label/src/helpers/dataBuilders  |   57.14 |        0 |   47.36 |      60 |                   
+  geoPlaceBuilder.ts                   |   71.42 |      100 |   33.33 |   66.66 | 13-24             
+  marketApi.ts                         |   66.66 |      100 |      50 |   68.75 | 31,49-52          
+  placeBuilder.ts                      |   41.17 |        0 |      50 |   46.15 | 46-65             
+ white-label/src/helpers/geo           |   73.33 |    16.66 |   55.55 |   73.33 |                   
+  placeType.ts                         |   73.33 |    16.66 |   55.55 |   73.33 | 51-52,73-74       
+ white-label/src/hooks/useMapbox       |     100 |      100 |     100 |     100 |                   
+  useMapbox.ts                         |     100 |      100 |     100 |     100 |                   
+ white-label/src/hooks/usePlaceSearch  |     100 |      100 |     100 |     100 |                   
+  usePlaceSearch.ts                    |     100 |      100 |     100 |     100 |                   
+ white-label/src/test-helpers          |     100 |      100 |     100 |     100 |                   
+  initTestsMetas.ts                    |     100 |      100 |     100 |     100 |                   
+  renderWithProviders.tsx              |     100 |      100 |     100 |     100 |                   
+ white-label/src/use-cases             |   86.66 |      100 |   71.42 |     100 |                   
+  fixtures.ts                          |   86.66 |      100 |   71.42 |     100 |                   
+ ...abel/src/use-cases/GetPlaceParents |     100 |    83.33 |     100 |     100 |                   
+  GetPlaceParents.ts                   |     100 |    83.33 |     100 |     100 | 13                
+ ...e-label/src/use-cases/GetPlaceTile |     100 |       50 |     100 |     100 |                   
+  GetPlaceTile.ts                      |     100 |       50 |     100 |     100 | 9                 
+ ...label/src/use-cases/GetPlacesLayer |     100 |       50 |     100 |     100 |                   
+  GetPlacesLayer.ts                    |     100 |       50 |     100 |     100 | 10                
+ .../src/use-cases/GetPricePageContext |     100 |    57.14 |     100 |     100 |                   
+  GetPricePageContext.ts               |     100 |    57.14 |     100 |     100 | 14-32             
+ ...ases/GetPricePageContextForAddress |     100 |       60 |     100 |     100 |                   
+  GetPricePageContextForAddress.ts     |     100 |       60 |     100 |     100 | 13-14             
+ ...ases/GetPricePageContextForCountry |     100 |       60 |     100 |     100 |                   
+  GetPricePageContextForCountry.ts     |     100 |       60 |     100 |     100 | 16-17             
+ .../use-cases/PlaceSearchAutocomplete |     100 |    66.66 |     100 |     100 |                   
+  PlaceSearchAutocomplete.ts           |     100 |    66.66 |     100 |     100 | 12                
+---------------------------------------|---------|----------|---------|---------|-------------------
