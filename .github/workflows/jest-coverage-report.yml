@@ -21,11 +21,13 @@ jobs:
             - uses: actions/checkout@v3
               with:
                 ref: ${{ github.event.client_payload.ref }}
-            # - name: put payload into json file
-            #   run: |
-            #       curl ${{ github.event.client_payload.coverage_report_url }} -H "Circle-Token: ${{ secrets.CCI_TOKEN }}" > coverage-final.json
-            #       echo "coverage-final.json content :"
-            #       cat coverage-final.json
+            - name: put payload into json file
+              run: |
+                  echo "coverage-final.json content :"
+                  cat ./coverage/coverage-final.json
+                # curl ${{ github.event.client_payload.coverage_report_url }} -H "Circle-Token: ${{ secrets.CCI_TOKEN }}" > coverage-final.json
+                # cat coverage-final.json
+                # echo "coverage-final.json content :"
             - uses: ArtiomTr/jest-coverage-report-action@v2.1.2
               id: coverage
               with:
