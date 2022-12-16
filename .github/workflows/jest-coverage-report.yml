@@ -23,9 +23,9 @@ jobs:
                 ref: ${{ github.event.client_payload.ref }}
             - name: get coverage-summary.json from CircleCI build
               run: |
-                  covReport=$(curl -L ${{ github.event.client_payload.coverage_report_summary_url }} -H "Circle-Token: ${{ secrets.CCI_TOKEN }}")
+                  covReportSummary=$(curl -L ${{ github.event.client_payload.coverage_report_summary_url }} -H "Circle-Token: ${{ secrets.CCI_TOKEN }}")
                   mkdir -p coverage
-                  echo ${covReport} | tee coverage/coverage-summary.json
+                  echo ${covReportSummary} | tee coverage/coverage-summary.json
             - name: Jest Coverage Comment
               id: coverage
               uses: MishaKav/jest-coverage-comment@v1.0.21
@@ -33,6 +33,6 @@ jobs:
               with:
                   number: ${{ steps.get-pr-number.outputs.result }}
                   message: |
-                    White label coverage summary.
+                    Jest code coverage summary.
                     ${{ steps.coverage.outputs.summaryHtml }}
-                    [See more details](${{ github.event.client_payload.coverage_report_details_url }})
+                    [See full report](${{ github.event.client_payload.coverage_report_details_url }})
