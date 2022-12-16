@@ -25,9 +25,9 @@ jobs:
               run: |
                   mkdir -p coverage
                   echo "CCI_TOKEN : ${{ secrets.CCI_TOKEN }}"
-                  covReport=curl ${{ github.event.client_payload.coverage_report_summary_url }} -H "Circle-Token: ${{ secrets.CCI_TOKEN }}"
+                  covReport=curl -L ${{ github.event.client_payload.coverage_report_summary_url }} -H "Circle-Token: ${{ secrets.CCI_TOKEN }}"
                   echo "coverage ${covReport}"
-                  curl ${{ github.event.client_payload.coverage_report_summary_url }} -H "Circle-Token: ${{ secrets.CCI_TOKEN }}" > coverage/coverage-summary.json
+                  echo ${covReport} > coverage/coverage-summary.json
                   echo "generated file :" && cat coverage/coverage-summary.json
             - name: Jest Coverage Comment
               id: coverage
