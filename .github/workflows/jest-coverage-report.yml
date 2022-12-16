@@ -10,12 +10,13 @@ jobs:
               id: get-pr-number
               with:
                   script: |
-                      (await github.pulls.list({
+                      await github.rest.pulls.list({
                       owner: context.repo.owner,
                       repo: context.repo.repo,
                       state: 'open',
                       head: '${{ github.event.client_payload.ref }}'
-                      }))[0].number
+                      })
+                      return pulls[0].number
                   result-encoding: string
             - uses: actions/checkout@v3
               with:
