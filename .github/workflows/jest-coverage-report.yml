@@ -33,6 +33,6 @@ jobs:
               with:
                   number: ${{ steps.get-pr-number.outputs.result }}
                   message: |
-                    Jest code coverage summary.
+                    ## Jest code coverage summary.
                     ${{ steps.coverage.outputs.summaryHtml }}
                     [See full report](${{ github.event.client_payload.coverage_report_details_url }})
