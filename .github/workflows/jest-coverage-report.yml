@@ -6,17 +6,17 @@ jobs:
     coverage:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/github-script@v6
+            - uses: actions/github-script@v6.3.3
               id: get-pr-number
               with:
                   script: |
-                      await github.rest.pulls.list({
+                      const { data } = await github.rest.pulls.list({
                       owner: context.repo.owner,
                       repo: context.repo.repo,
                       state: 'open',
                       head: '${{ github.event.client_payload.ref }}'
                       })
-                      return pulls[0].number
+                      return data[0].number
                   result-encoding: string
             - uses: actions/checkout@v3
               with:
