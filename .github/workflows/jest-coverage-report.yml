@@ -1,7 +1,7 @@
 name: pr_coverage_report
 on:
-    repository_dispatch:
-        types: push_coverage_report
+  repository_dispatch:
+      types: push_coverage_report
 jobs:
     coverage:
         runs-on: ubuntu-latest
