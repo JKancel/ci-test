@@ -16,6 +16,7 @@ jobs:
                       state: 'open',
                       head: '${{ github.event.client_payload.ref }}'
                       })
+                      console.log('datas from rest pulls', data);
                       return data[0].number
                   result-encoding: string
             - uses: actions/checkout@v3
