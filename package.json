@@ -1,4 +1,5 @@
 {
+	"name": "jkancel-ci-test",
 	"scripts": {
     "test": "jest"
   },
